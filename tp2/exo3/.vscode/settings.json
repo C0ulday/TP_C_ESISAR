@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "quotient.h": "c",
+        "stdio.h": "c",
+        "reste.h": "c",
+        "valeur.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}
