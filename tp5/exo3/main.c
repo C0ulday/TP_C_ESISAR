@@ -8,15 +8,15 @@ int calcPile(char expression[]) {
 
     pileInt maPile = creerPile();
 
-    char *curseur = expression;
+    char* curseur = expression;
     int ope1, ope2,chiffre, res;
 
 
     while (*curseur != '\0') { // tant que pas fini expression
         if (*curseur >= '0' && *curseur <= '9') {
-            // si on a affaire à un entier, convertissez-le de char à int
+            // si on a affaire à un entier, convertir char à int
             chiffre = *curseur - '0';
-            empiler(maPile, chiffre);
+            empiler(maPile, chiffre); // je mets au dessus de maPile
         } else if (*curseur == '*' || *curseur == '+' || *curseur == '-' || *curseur == '/') {
             // dès que je croise un opérateur, je dépile 2 entiers
             // pour l'opération
@@ -43,7 +43,7 @@ int calcPile(char expression[]) {
         curseur++; // j'oublie pas d'avancer mon curseur vers le caractère suivant
     }
     res = depiler(maPile); // résultat au sommet
-    free(maPile);
+    free(maPile); // j'oublie pas de tout libérer
     return res;
 }
 
@@ -52,7 +52,7 @@ int main(int argc, char* argv[])
 {
 
     if(argc <2){
-        printf("Syntaxe : ./my prog expression\n");
+        printf("Il n'y a pas assez d'arguments pour l'exécution \nSyntaxe : ./myprog expression\n");
         printf("ex. ./myprog 42+5*67-/\n");
         exit(1);
     }

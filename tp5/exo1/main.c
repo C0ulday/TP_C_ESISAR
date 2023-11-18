@@ -15,7 +15,7 @@ int main(int argc, char* argv[]){
     printf("Aucun choix de fait\n\n");
 
     if(argc <6){
-        perror("Synthaxe : f1_num f1_den opération f1_num f2_den");
+        perror("Il manque des arguments pour lancer l'exécutable \nSynthaxe : f1_num f1_den opération f1_num f2_den");
         exit(0);
     }
 
